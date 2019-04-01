@@ -1,0 +1,56 @@
+{% extends 'layout/base.html.twig' %}
+{% block body %}
+    <div class="col-sm-8 blog-main">
+
+        <div class="blog-post">
+            <h2 class="blog-post-title">Sample blog post 1</h2>
+            <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+
+            <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.
+                <a href="{{ path('simple_post', { 'id': '1'}) }}">                
+                
+                You must read this post
+                </a>
+            </p>
+            <hr>
+   
+        </div><!-- /.blog-post -->
+
+        <div class="blog-post">
+            <h2 class="blog-post-title">Sample blog post 2</h2>
+            <p class="blog-post-meta">January 2, 2014 by <a href="#">Mark</a></p>
+
+            <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.
+                <a href="{{ path('simple_post', { 'id': '2'}) }}">                
+               
+                You must read this post
+                </a>
+            </p>
+            <hr>
+   
+        </div><!-- /.blog-post -->
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">Sample blog post 3</h2>
+            <p class="blog-post-meta">January 3, 2014 by <a href="#">Mark</a></p>
+
+            <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.
+                <a href="{{ path('simple_post', { 'id': '3'}) }}">                
+               
+                You must read this post
+                </a>
+            </p>
+            <hr>
+   
+        </div><!-- /.blog-post -->
+
+          <nav>
+            <ul class="pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+
+        </div><!-- /.blog-main -->
+
+{% endblock %}

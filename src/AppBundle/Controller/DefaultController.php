@@ -16,51 +16,19 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('layout/base.html.twig');
+        return $this->render('AppBundle:Home:index.html.twig');
+       /* return $this->render('layout/base.html.twig');*/
     }
 
     /**
-     * @Route("/producto", name="productos_list")
-     * @Method({"GET"})
+     * @Route("/post/{id}", name="simple_post")
      */
-    public function listProducto(Request $request)
+    public function simplePost($id)
     {
-        return new Response(
-            '<html><body>'.'Nro de Productos: '.$request->get('nro').'</body></html>'
-        );
+        return $this->render('AppBundle:Post:simple.html.twig', array(
+            'id' => $id
+        ));
     }
 
-    /**
-     * @Route("/producto/new", name="cms_producto_new")
-     * @Method({"POST"})
-     */
-    public function newProducto(Request $request)
-    {
-        return new Response(
-            json_encode($request->request->all())
-        );
-    }
-
-    /**
-     * @Route("/producto/{id}/edit", name="cms_producto_edit")
-     * @Method({"PUT"})
-     */
-    public function editProducto($id)
-    {
-        return new Response(
-            'Editar Producto ID: '.$id
-        );
-    }
-
-    /**
-     * @Route("/producto/{id}", name="cms_producto_delete")
-     * @Method({"DELETE"})
-     */
-    public function deteleProducto($id)
-    {
-        return new Response(
-            'Borrar Producto ID: '.$id
-        );
-    }
-
+   
 }
