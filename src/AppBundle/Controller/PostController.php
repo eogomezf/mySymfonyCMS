@@ -15,10 +15,10 @@ class PostController extends Controller
     public function insertPost()
     {
         $post = new Post();
-        $post->setTitulo('Top Framework PHP 2018');
-        $post->setContenido('Aca va el contenido dando una descripcion del framewark que fue catalogado como uno de los mejores fw para php');
-        $post->setAutor('Juanito Caminante');
-        $post->setFecha(new \DateTime('2018-04-01'));
+        $post->setTitulo('Symfony 4 release');
+        $post->setContenido('llega lo que estabamos esperando el nuevo realese de Symfony, la version 4 con muchas mejoras y actualizciones de lujos para facilitarnos la vida');
+        $post->setAutor('Floegel Servicios');
+        $post->setFecha(new \DateTime('2018-07-04'));
 
         $em = $this->getDoctrine()->getManager();
 
@@ -27,5 +27,22 @@ class PostController extends Controller
         $em->flush();
 
         return new Response('Se inserto nueva entrada con ID: '.$post->getId());
+    }
+
+     /**
+     * @Route("/get/post", name="get_post")
+     */
+    public function getAllPost()
+    {
+       
+        $em = $this->getDoctrine()->getManager();
+
+        $repository = $em->getRepository('AppBundle:Post');
+
+        $posts = $repository->findAll();
+
+        dump($posts);
+
+        return new Response('Datos tabla post');
     }
 }
